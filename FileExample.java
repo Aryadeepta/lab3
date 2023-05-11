@@ -45,7 +45,9 @@ public class FileExample {
 	  if(f.isDirectory()) {
 	    File[] paths = f.listFiles();
 	    for(File subFile: paths) {
-	      result.add(subFile);
+	      for(File subF:getFiles(subFile)){
+          result.add(subF);
+        }
 	    }
 	  }
 	  return result;
